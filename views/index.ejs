@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UDDHU.EXE</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <main class="dashboard">
+
+        <header class="topbar">
+
+            <div class="brand">
+                <h1>UDDHU.EXE</h1>
+
+                <p>
+                    Life is a game. Unfortunately, you're the player.
+                </p>
+            </div>
+
+            <div class="level">
+                <span>LEVEL</span>
+                <strong><%= player.level %></strong>
+            </div>
+
+        </header>
+
+
+        <section class="player-card">
+
+            <div class="player-info">
+
+                <span class="label">PLAYER</span>
+
+                <h2><%= player.name %></h2>
+
+                <p><%= player.title %></p>
+
+            </div>
+
+
+            <div class="xp-section">
+
+                <div class="xp-info">
+                    <span>XP</span>
+
+                    <span>
+                        <%= player.xp %> / <%= player.xpToNextLevel %>
+                    </span>
+                </div>
+
+                <div class="xp-bar">
+
+                    <div
+                        class="xp-progress"
+                        style="width: <%= (player.xp / player.xpToNextLevel) * 100 %>%">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="stats-section">
+
+            <div class="stat-card">
+                <span class="stat-label">TOTAL QUESTS</span>
+                <strong><%= stats.totalQuests %></strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">COMPLETED</span>
+                <strong><%= stats.completedQuests %></strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">ACTIVE</span>
+                <strong><%= stats.activeQuests %></strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">COMPLETION</span>
+                <strong><%= stats.completionRate %>%</strong>
+            </div>
+
+        </section>
+
+        <section class="quests">
+
+            <div class="section-heading">
+
+                <h2>ACTIVE QUESTS</h2>
+
+                <a href="/quests/create" class="create-quest-link">
+                    + CREATE QUEST
+                </a>
+
+            </div>
+
+
+            <div class="quest-list">
+
+                <% quests.forEach(quest => { %>
+
+                    <article class="quest-card <%= quest.completed ? 'completed' : '' %>">
+
+                        <div class="quest-info">
+
+                            <span class="quest-type">
+                                <%= quest.icon %> <%= quest.type %>
+                            </span>
+
+                            <h3><%= quest.title %></h3>
+
+                            <p><%= quest.description %></p>
+
+                        </div>
+
+
+                        <div class="quest-action">
+
+                            <span class="quest-xp">
+                                +<%= quest.xp %> XP
+                            </span>
+
+
+                            <% if (!quest.completed) { %>
+
+                                <form action="/quests/<%= quest.id %>/complete" method="POST">
+
+                                    <button type="submit" class="complete-btn">
+                                        COMPLETE
+                                    </button>
+
+                                </form>
+
+                            <% } else { %>
+
+                                <span class="completed-text">
+                                    ✓ COMPLETED
+                                </span>
+
+                            <% } %>
+
+                        </div>
+
+                    </article>
+
+                <% }); %>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>

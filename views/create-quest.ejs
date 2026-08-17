@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Quest | UDDHU.EXE</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <main class="dashboard">
+
+        <header class="topbar">
+
+            <div class="brand">
+
+                <h1>CREATE QUEST</h1>
+
+                <p>
+                    Another task to pretend you're going to finish.
+                </p>
+
+            </div>
+
+            <a href="/" class="back-button">
+                ← BACK
+            </a>
+
+        </header>
+
+        <section class="create-section">
+
+            <form action="/quests/create" method="POST" class="quest-form">
+
+                <div class="form-group">
+
+                    <label for="title">
+                        QUEST TITLE
+                    </label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        placeholder="e.g. Finish DBMS Unit 3"
+                        required>
+                </div>
+
+                <div class="form-group">
+
+                    <label for="description">
+                        DESCRIPTION
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="4"
+                        placeholder="What needs to be done?"
+                        required></textarea>
+                </div>
+
+                <div class="form-group">
+
+                    <label for="type">
+                        QUEST TYPE
+                    </label>
+
+                    <select id="type" name="type" required>
+
+                        <option value="MAIN QUEST">
+                            MAIN QUEST
+                        </option>
+
+                        <option value="SIDE QUEST">
+                            SIDE QUEST
+                        </option>
+
+                        <option value="DAILY QUEST">
+                            DAILY QUEST
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="icon">
+                        QUEST ICON
+                    </label>
+
+                    <select id="icon" name="icon" required>
+
+                        <option value="⚔️">
+                            ⚔️ Sword
+                        </option>
+
+                        <option value="💻">
+                            💻 Computer
+                        </option>
+
+                        <option value="🏃">
+                            🏃 Running
+                        </option>
+
+                        <option value="📚">
+                            📚 Study
+                        </option>
+
+                        <option value="🧠">
+                            🧠 Brain
+                        </option>
+
+                        <option value="🔥">
+                            🔥 Grind
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="xp">
+                        XP REWARD
+                    </label>
+
+                    <input
+                        type="number"
+                        id="xp"
+                        name="xp"
+                        min="1"
+                        placeholder="100"
+                        required>
+                </div>
+
+                <button type="submit" class="create-button">
+                    ⚔️ CREATE QUEST
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>
