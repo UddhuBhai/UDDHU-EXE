@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Finish Java Unit 1",
+        "description": "Complete all topics from Unit 1.",
+        "type": "MAIN QUEST",
+        "icon": "⚔️",
+        "xp": 100,
+        "completed": true
+    },
+    {
+        "id": 2,
+        "title": "Build UDDHU.EXE",
+        "description": "Turn this idea into an actual project.",
+        "type": "SIDE QUEST",
+        "icon": "💻",
+        "xp": 150,
+        "completed": true
+    },
+    {
+        "id": 3,
+        "title": "Run 5 KM",
+        "description": "Touch grass. Become athletic.",
+        "type": "DAILY QUEST",
+        "icon": "🏃",
+        "xp": 75,
+        "completed": true
+    },
+    {
+        "id": 1786959289155,
+        "title": "Huehuehue",
+        "description": "Fuck Yeah",
+        "type": "MAIN QUEST",
+        "icon": "⚔️",
+        "xp": 320,
+        "completed": true
+    }
+]
